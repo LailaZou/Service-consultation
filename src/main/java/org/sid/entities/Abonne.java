@@ -10,14 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
 
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
+
 public class Abonne {
 
 	@Id
@@ -142,6 +139,24 @@ public class Abonne {
 
 	public void setSIRET(String sIRET) {
 		SIRET = sIRET;
+	}
+
+	public Abonne(String idAbonne, String nom, String prenom, String cin, String type, String idUser, String tel,
+			String adresse, String sIRET, String nomComplet, String domaine, Boolean actif, String idBo) {
+		super();
+		this.idAbonne = idAbonne;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.cin = cin;
+		this.type = type;
+		this.idUser = idUser;
+		this.tel = tel;
+		this.adresse = adresse;
+		SIRET = sIRET;
+		this.nomComplet = nomComplet;
+		this.domaine = domaine;
+		this.actif = actif;
+		this.idBo = idBo;
 	}    
 
 	

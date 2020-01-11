@@ -3,12 +3,9 @@ package org.sid.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor 
 public class Carte {
 	@Id
 	private String idCarte;
@@ -50,6 +47,14 @@ public class Carte {
 	}
 
 	public void setIdCompte(String idCompte) {
+		this.idCompte = idCompte;
+	}
+
+	public Carte(String idCarte, String type, Boolean isActivate, String idCompte) {
+		super();
+		this.idCarte = idCarte;
+		this.type = type;
+		this.isActivate = isActivate;
 		this.idCompte = idCompte;
 	}
 	

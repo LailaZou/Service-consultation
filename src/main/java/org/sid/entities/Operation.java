@@ -8,12 +8,9 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
 public class Operation {
 	@Id
 	private String idOperation;
@@ -100,6 +97,18 @@ public class Operation {
 		super();
 		this.montant = prelevement.getMontant();
 		this.idCompteSrc = prelevement.getIdCompteSrc();
+	}
+
+	public Operation(String idOperation, float montant, Date date, String type, String numFacture, String idCompteSrc,
+			String idCompteBeneficiaire) {
+		super();
+		this.idOperation = idOperation;
+		this.montant = montant;
+		this.date = date;
+		this.type = type;
+		this.numFacture = numFacture;
+		this.idCompteSrc = idCompteSrc;
+		this.idCompteBeneficiaire = idCompteBeneficiaire;
 	}
 
     

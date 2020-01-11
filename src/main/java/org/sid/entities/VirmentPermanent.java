@@ -5,12 +5,9 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
 public class VirmentPermanent {
 	@Id
 	private String idVirment;
@@ -70,6 +67,17 @@ public class VirmentPermanent {
 	}
 
 	public void setIdCompteBeneficiaire(String idCompteBeneficiaire) {
+		this.idCompteBeneficiaire = idCompteBeneficiaire;
+	}
+
+	public VirmentPermanent(String idVirment, float montant, Date date, int frequence, String idCompteSrc,
+			String idCompteBeneficiaire) {
+		super();
+		this.idVirment = idVirment;
+		this.montant = montant;
+		this.date = date;
+		this.frequence = frequence;
+		this.idCompteSrc = idCompteSrc;
 		this.idCompteBeneficiaire = idCompteBeneficiaire;
 	}
 	

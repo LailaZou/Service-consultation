@@ -7,12 +7,9 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
 public class Agence {
 	@Id
     private String idAgence;
@@ -56,6 +53,22 @@ public class Agence {
 	}
 
 	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getIdAgence() {
+		return idAgence;
+	}
+
+	public void setIdAgence(String idAgence) {
+		this.idAgence = idAgence;
+	}
+
+	public Agence(String idAgence, String label, String adresse, String tel) {
+		super();
+		this.idAgence = idAgence;
+		this.label = label;
+		this.adresse = adresse;
 		this.tel = tel;
 	}
 

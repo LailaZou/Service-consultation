@@ -9,13 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor 
 public class Contrat {
 	@Id
     private String idContrat  ;
@@ -57,6 +53,14 @@ public class Contrat {
 	}
 
 	public void setIdAbonne(String idAbonne) {
+		this.idAbonne = idAbonne;
+	}
+
+	public Contrat(String idContrat, Date dateDebut, Date dateExpiration, String idAbonne) {
+		super();
+		this.idContrat = idContrat;
+		this.dateDebut = dateDebut;
+		this.dateExpiration = dateExpiration;
 		this.idAbonne = idAbonne;
 	}
 

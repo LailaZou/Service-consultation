@@ -3,12 +3,9 @@ package org.sid.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
 public class Beneficiaire {
 	@Id
 	private String idBeneficiaire;
@@ -44,6 +41,13 @@ public class Beneficiaire {
 		return username;
 	}
 	public void setUsername(String username) {
+		this.username = username;
+	}
+	public Beneficiaire(String idBeneficiaire, String idCompteBeneficiaire, String idCompteSrc, String username) {
+		super();
+		this.idBeneficiaire = idBeneficiaire;
+		this.idCompteBeneficiaire = idCompteBeneficiaire;
+		this.idCompteSrc = idCompteSrc;
 		this.username = username;
 	}
 	

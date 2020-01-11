@@ -8,13 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor 
 public class BO {
 	@Id
     private String idBo  ;
@@ -87,6 +83,26 @@ public class BO {
 		return abonnes;
 	}
 	public void setAbonnes(Collection<Abonne> abonnes) {
+		this.abonnes = abonnes;
+	}
+	public String getIdAgence() {
+		return idAgence;
+	}
+	public void setIdAgence(String idAgence) {
+		this.idAgence = idAgence;
+	}
+	public BO(String idBo, String nom, String prenom, String cin, String type, String idUser, String tel,
+			String adresse, String idAgence, Collection<Abonne> abonnes) {
+		super();
+		this.idBo = idBo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.cin = cin;
+		this.type = type;
+		this.idUser = idUser;
+		this.tel = tel;
+		this.adresse = adresse;
+		this.idAgence = idAgence;
 		this.abonnes = abonnes;
 	}
 

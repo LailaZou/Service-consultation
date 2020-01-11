@@ -6,13 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor
 public class Offre {
 	@Id
     private String idOffre;
@@ -65,6 +59,16 @@ public class Offre {
 	public void setIdContrat(String idContrat) {
 		this.idContrat = idContrat;
 	}
+
+	public Offre(String idOffre, int min, int max, String type, String idContrat) {
+		super();
+		this.idOffre = idOffre;
+		this.min = min;
+		this.max = max;
+		this.type = type;
+		this.idContrat = idContrat;
+	}
     
+	
     
 }

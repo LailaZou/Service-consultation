@@ -7,13 +7,9 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+;
 
 @Document
-@Data @AllArgsConstructor @NoArgsConstructor 
 public class Compte {
 	@Id
 	private String idCompte;
@@ -48,6 +44,13 @@ public class Compte {
 		return idBo;
 	}
 	public void setIdBo(String idBo) {
+		this.idBo = idBo;
+	}
+	public Compte(String idCompte, float solde, String idAbonne, String idBo) {
+		super();
+		this.idCompte = idCompte;
+		this.solde = solde;
+		this.idAbonne = idAbonne;
 		this.idBo = idBo;
 	}
     
